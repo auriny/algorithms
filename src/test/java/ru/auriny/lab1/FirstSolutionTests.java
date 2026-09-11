@@ -8,7 +8,7 @@ import java.util.Deque;
 
 public class FirstSolutionTests {
     @Test
-    public void testFirstSolution() {
+    void testFirstSolution() {
         FirstSolution fs = new FirstSolution();
         Assertions.assertTrue(fs.isValid("()"));
         Assertions.assertTrue(fs.isValid("()[]{}"));

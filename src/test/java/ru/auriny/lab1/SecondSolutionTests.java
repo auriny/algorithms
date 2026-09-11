@@ -8,7 +8,7 @@ import java.util.List;
 
 public class SecondSolutionTests {
     @Test
-    public void testSolution() {
+    void testSolution() {
         SecondSolution sol = new SecondSolution();
 
         Assertions.assertEquals(2, sol.removeElementInplace(new ArrayList<>(List.of(4, 5, 5, 4)), 4));
