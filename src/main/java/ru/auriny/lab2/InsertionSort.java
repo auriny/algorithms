@@ -15,9 +15,9 @@ public class InsertionSort implements Sorting<Integer> {
             int j;
 
             for (j = i - 1; j >= 0; j--) {
-                var right = nums.get(j);
-                if (el < right) {
-                    nums.set(j + 1, right);
+                var left = nums.get(j);
+                if (el < left) {
+                    nums.set(j + 1, left);
                 } else break;
             }
 
