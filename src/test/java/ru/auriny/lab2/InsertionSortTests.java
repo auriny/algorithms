@@ -9,7 +9,7 @@ import java.util.List;
 public class InsertionSortTests {
     @Test
     void insertionSort() {
-        InsertionSort insertionSort = new InsertionSort();
+        Sorting<Integer> insertionSort = new InsertionSort();
         List<Integer> list = new ArrayList<>(List.of(1, 2, 5, 1, 1, 2, 6, 8, 9, 3));
         insertionSort.sort(list);
 
