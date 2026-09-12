@@ -1,5 +1,6 @@
 package ru.auriny.lab2;
 
+import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.Test;
 
 import java.util.ArrayList;
@@ -17,11 +18,5 @@ public class StudentSortTests {
         ));
 
         sort.sort(students);
-
-//        Assertions.assertEquals(new ArrayList<>(List.of(
-//                new Student("Anton", 22),
-//                new Student("Antonio", 23),
-//                new Student("Vasya", 19),
-//                new Student("Vasya", 21))), students);
     }
 }
