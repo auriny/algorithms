@@ -5,6 +5,8 @@ import java.util.List;
 
 public class MergeSort implements Sorting<Integer> {
     private void slice(List<Integer> nums, int start, int end) {
+        if (start >= end) return;
+
         int mid = start + (end - start) / 2;
 
         slice(nums, start, mid); // левая половина
@@ -29,12 +31,13 @@ public class MergeSort implements Sorting<Integer> {
         while (rightPtr <= end) temp.add(nums.get(rightPtr++));
 
         for (int i = 0; i < temp.size(); i++) {
-            nums.set(i, temp.get(i));
+            nums.set(start + i, temp.get(i));
         }
     }
 
     @Override
     public void sort(List<Integer> nums) {
+        if (nums == null || nums.isEmpty()) return;
         slice(nums, 0, nums.size() - 1);
     }
 }
