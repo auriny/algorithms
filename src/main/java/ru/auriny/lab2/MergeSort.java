@@ -6,7 +6,6 @@ import java.util.List;
 public class MergeSort implements Sorting<Integer> {
     private void slice(List<Integer> nums, int start, int end) {
         if (start >= end) return;
-
         int mid = start + (end - start) / 2;
 
         slice(nums, start, mid); // левая половина

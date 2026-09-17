@@ -3,11 +3,8 @@ package ru.auriny.lab2;
 import java.util.List;
 
 public class InsertionSort implements Sorting<Integer> {
-    @Override // ура изобретаем велосипед!
+    @Override
     public void sort(List<Integer> nums) {
-//        nums.sort(null);
-//        IO.print(nums);
-
         if (nums == null || nums.size() <= 1) return;
 
         for (int i = 1; i < nums.size(); i++) {
