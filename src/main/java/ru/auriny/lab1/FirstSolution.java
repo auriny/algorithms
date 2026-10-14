@@ -9,7 +9,7 @@ public class FirstSolution {
 
         for (var c : str.toCharArray() ) {
             switch (c) {
-                case '(' ->  stack.push(')');
+                case '(' -> stack.push(')');
                 case '[' -> stack.push(']');
                 case '{' -> stack.push('}');
                 default -> {

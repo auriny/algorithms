@@ -11,6 +11,7 @@ public class FirstSolutionTests {
     void testFirstSolution() {
         FirstSolution fs = new FirstSolution();
         Assertions.assertTrue(fs.isValid("()"));
+        Assertions.assertFalse(fs.isValid(")"));
         Assertions.assertTrue(fs.isValid("()[]{}"));
         Assertions.assertFalse(fs.isValid("(]"));
         Assertions.assertTrue(fs.isValid("([])"));
