@@ -13,7 +13,7 @@ public class StudentSort implements Sorting<Student> {
 
             for (j = i - 1; j >= 0; j--) {
                 var left = students.get(j);
-                if (left.compareTo(el) > 0) {
+                if (el.compareTo(left) < 0) {
                     students.set(j + 1, left);
                 } else break;
             }
