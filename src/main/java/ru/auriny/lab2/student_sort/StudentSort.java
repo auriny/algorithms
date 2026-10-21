@@ -13,13 +13,12 @@ public class StudentSort implements Sorting<Student> {
 
             for (j = i - 1; j >= 0; j--) {
                 var left = students.get(j);
-                if (el.compareTo(left) > 0) {
+                if (left.compareTo(el) > 0) {
                     students.set(j + 1, left);
                 } else break;
             }
 
             students.set(j + 1, el);
         }
-//        students.sort(Student::compareTo);
     }
 }
