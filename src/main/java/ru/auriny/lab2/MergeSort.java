@@ -21,7 +21,7 @@ public class MergeSort implements Sorting<Integer> {
     }
 
     private void merge(List<Integer> nums, int start, int middle, int end) {
-        // паттерн two pointers дабы оптимизировать O(n^2) до O(n)
+        // переносим указатели в начало каждой половины
         var leftPtr = start;
         var rightPtr = middle + 1;
 
