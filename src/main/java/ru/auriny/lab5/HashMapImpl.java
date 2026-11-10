@@ -35,16 +35,10 @@ public class HashMapImpl<V> implements HashMap<String, V> {
         int ix = (int) hashByString(key);
 
         var box = table.get(ix);
-        if (box == null)  {
-            box = new LinkedList<>();
-            box.add(new Entry<>(key, value));
-            table.set(ix, box);
-        } else {
-            for (var entry : box) {
-                if (entry.key.equals(key)) {
-                    entry.value = value;
-                    return; // выходим из метода
-                }
+        for (var entry : box) {
+            if (entry.key.equals(key)) {
+                entry.value = value;
+                return; // выходим из метода
             }
             // если цикл завершился и не вышел, значит ключа нет и надо создать новый
             box.add(new Entry<>(key, value));
@@ -54,10 +48,8 @@ public class HashMapImpl<V> implements HashMap<String, V> {
     @Override
     public V getValue(String key) {
         int ix = (int) hashByString(key);
-
         var box = table.get(ix);
-        if (box == null) return null; // ранний выход
-
+        
         for (var entry : box) { // если нашелся элемент
             if (entry.key.equals(key)) { // просто возвращаем его
                 return entry.value;
@@ -70,9 +62,7 @@ public class HashMapImpl<V> implements HashMap<String, V> {
     @Override
     public V delete(String key) {
         int ix = (int) hashByString(key);
-
         var box = table.get(ix);
-        if (box == null) return null;
 
         // так как мы знаем, что на этот раз используется связный список,
         // придётся удалять через итератор
