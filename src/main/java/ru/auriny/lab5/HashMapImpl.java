@@ -23,7 +23,7 @@ public class HashMapImpl<V> implements HashMap<String, V> {
      * @return значение хэша
      */
     private int hashByString(String value) {
-        long hash = 0;
+        int hash = 0;
         for (Character ch : value.toCharArray()) {
             hash = (hash * A + ch) % TABLE_SIZE;
         }
