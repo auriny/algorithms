@@ -22,7 +22,7 @@ public class HashMapImpl<V> implements HashMap<String, V> {
      * @param value ключ, по которому сохранится значение в хэш-таблицу
      * @return значение хэша
      */
-    private long hashByString(String value) {
+    private int hashByString(String value) {
         long hash = 0;
         for (Character ch : value.toCharArray()) {
             hash = (hash * A + ch) % TABLE_SIZE;
@@ -32,7 +32,7 @@ public class HashMapImpl<V> implements HashMap<String, V> {
 
     @Override
     public void put(String key, V value) {
-        int ix = (int) hashByString(key);
+        int ix = hashByString(key);
 
         var box = table.get(ix);
         for (var entry : box) {
@@ -47,7 +47,7 @@ public class HashMapImpl<V> implements HashMap<String, V> {
 
     @Override
     public V getValue(String key) {
-        int ix = (int) hashByString(key);
+        int ix = hashByString(key);
         var box = table.get(ix);
         
         for (var entry : box) { // если нашелся элемент
@@ -61,7 +61,7 @@ public class HashMapImpl<V> implements HashMap<String, V> {
 
     @Override
     public V delete(String key) {
-        int ix = (int) hashByString(key);
+        int ix = hashByString(key);
         var box = table.get(ix);
 
         // так как мы знаем, что на этот раз используется связный список,
