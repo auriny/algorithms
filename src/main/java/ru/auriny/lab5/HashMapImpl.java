@@ -40,9 +40,9 @@ public class HashMapImpl<V> implements HashMap<String, V> {
                 entry.value = value;
                 return; // выходим из метода
             }
-            // если цикл завершился и не вышел, значит ключа нет и надо создать новый
-            box.add(new Entry<>(key, value));
         }
+        // если цикл завершился и не вышел, значит ключа нет и надо создать новый
+        box.add(new Entry<>(key, value));
     }
 
     @Override
